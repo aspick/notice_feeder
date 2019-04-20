@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'notice_feeder'
+exit validate

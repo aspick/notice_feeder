@@ -1,0 +1,41 @@
+type: object
+properties:
+  platform:
+    type: string
+    enum:
+      - ios
+      - android
+      - web
+      - all
+  target_version:
+    type: string
+  alert:
+    type: boolean
+  always:
+    type: boolean
+  active:
+    type: boolean
+
+  title:
+    type: object
+    properties:
+      ja_JP:
+        type: string
+      en_US:
+        type: string
+    required:
+      - ja_JP
+  message:
+    type: object
+    properties:
+      ja_JP:
+        type: string
+      en_US:
+        type: string
+    required:
+      - ja_JP
+
+required:
+  - platform
+  - title
+  - message
