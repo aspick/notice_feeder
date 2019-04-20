@@ -3,7 +3,8 @@ require "json"
 require "json-schema"
 require "dotenv"
 require "tempfile"
-require "google-cloud-storage"
+require "google/cloud/storage"
+
 require "notice_feeder/version"
 
 module NoticeFeeder
