@@ -3,7 +3,8 @@ RSpec.describe NoticeFeeder do
     expect(NoticeFeeder::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  it "valid sample data" do
+    data_path = File.join(__dir__, "assets", "*.yaml")
+    expect(NoticeFeeder.validate(data_file_path: data_path)).to be 0 # success
   end
 end

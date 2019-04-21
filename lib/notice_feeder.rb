@@ -10,11 +10,11 @@ require "notice_feeder/version"
 module NoticeFeeder
   class Error < StandardError; end
 
-  def self.validate
+  def self.validate(data_file_path: nil)
     schema = YAML.load_file(File.join(__dir__, "..", "schema", "data.yaml"))
 
     success = true
-    data_file_paths = Dir.glob(File.join(Dir.pwd, "data", "*.yaml"))
+    data_file_paths = Dir.glob(data_file_path || File.join(Dir.pwd, "data", "*.yaml"))
     data_file_paths.each do |path|
       begin
         data = YAML.load_file(path)
@@ -34,12 +34,12 @@ module NoticeFeeder
     end
   end
 
-  def self.update
+  def self.update(data_file_path: nil)
     # env
     Dotenv.load
 
     # join data
-    files = Dir.glob(File.join(Dir.pwd, "data", "*.yaml"))
+    files = Dir.glob(data_file_path || File.join(Dir.pwd, "data", "*.yaml"))
 
     ground_data = files.map do |path|
       YAML.load_file(path)

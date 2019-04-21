@@ -1,14 +1,17 @@
 type: object
 properties:
   platform:
-    type: string
-    enum:
-      - ios
-      - android
-      - web
-      - all
+    type: array
+    items:
+      type: string
+      enum:
+        - ios
+        - android
+        - web
   target_version:
-    type: string
+    type: array
+    items:
+      type: string
   alert:
     type: boolean
   always:
