@@ -10,3 +10,5 @@ title:
 message:
   ja_JP: メッセージ本文
   en_US: Message body
+alert: true
+active: true
